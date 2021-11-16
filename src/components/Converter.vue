@@ -117,6 +117,7 @@ export default {
     },
     convert() {
       const defaultValute = {Value: 1, Nominal: 1 };
+       // TODO 1
       let firstValute = this.getDatas(this.selected[0]) ?? defaultValute,
           firstValuteValue = firstValute.Value * Number(this.inputed),
           firstValuteNominal = firstValute.Nominal;
@@ -127,6 +128,7 @@ export default {
       this.result = result ? Math.floor(result * 10000) / 10000 : null;
     },
     change() {
+     // TODO 2
      this.selected = [this.selected[1], this.selected[0]]
      const result = this.result
      const inputed = this.inputed
