@@ -44,9 +44,9 @@ export default {
   },
   computed: {
     delta: function () {
-      const num = Number(this.data.Value - this.data.Previous).toFixed(4);
-      const log = this.data.Value < this.data.Previous;
-      return { num: num, log: log };
+      const num = Number(this.data.Value - this.data.Previous).toFixed(4)
+      const log = this.data.Value < this.data.Previous
+      return { num: num, log: log }
     },
   },
 };
