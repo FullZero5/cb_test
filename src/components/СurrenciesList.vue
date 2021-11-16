@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-input v-model="text" placeholder="Поиск ...." class="my-4"></b-form-input>
+    <b-form-input v-model="text" placeholder="Поиск ...." class="my-4" debounce="500"></b-form-input>
     <Cards v-for="item in getValues(text)" :key="item.ID" :data="item" class="my-2"/>
   </div>
 </template>

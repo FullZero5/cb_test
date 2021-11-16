@@ -10,6 +10,8 @@ export const store = new Vuex.Store({
       countries: ['RUB']
   },
   getters: {
+    getInputed: state => state.inputed,
+    getResult: state => state.result,
     getValues: state => filter => {
         const data = Object.keys(state.value).map(key => {return state.value[key]})
         const result  = data.filter(row => {
@@ -23,6 +25,7 @@ export const store = new Vuex.Store({
         });
         return filter === '' ? data : result
     },
+    getDatas: state => countrie => state.value[countrie],
     getCountries: state => state.countries
   },
   mutations: {
@@ -39,9 +42,10 @@ export const store = new Vuex.Store({
   },
   actions: {
     GET_CURRENCIES: async (context) => {
-        let { data } = await Axios.get('https://www.cbr-xml-daily.ru/daily_json.js');
-        context.commit('SET_CURRENCIES', data.Valute);
+        let { data } = await Axios.get('https://www.cbr-xml-daily.ru/daily_json.js')
+        context.commit('SET_CURRENCIES', data.Valute)
         context.commit('SET_COUNTRIES', data.Valute)
-  },
+    },
+
  }
 });
